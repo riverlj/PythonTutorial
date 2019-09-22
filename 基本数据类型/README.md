@@ -138,7 +138,152 @@ print (random.random())
 
 ### String
 
-### List
+使用 `'` 或者 `"`  框起来 表示字符串。
+
+```python
+var = "Hello World"
+var1 = 'Hello RiverLi'
+```
+
+#### 常见操作
+
+```python
+var = "hello world"
+print(var[0], var[1]) # 访问
+print(var[0:5]) # 截取
+print(var[0:5] + ' RiverLi') # 拼接
+
+# 遍历字符串
+for i in var:
+    print (i)
+
+# 遍历字符串
+for i in range(0, len(var)):
+    print (var[i])
+```
+
+#### 转义字符
+
+![转义字符表](https://riverli.oss-cn-beijing.aliyuncs.com/PythonTutorial/python%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6.jpg)
+
+```python
+print('我是RiverLi\
+我在写Python')
+print('\\')
+print('昨天看到一本书叫做\"python大全\"')
+print('昨天看到一本书叫做\'21天入门python\'')
+print('\a') #响了一下换了一行
+print('Python真的很好学\n，三天我就入门了，\000\000\000而且\f')
+```
+
+#### 运算
+
+```python
+name = 'RiverLi'
+age = '28'
+
+userInfo = name + " " + age
+print(userInfo)
+print(userInfo*2)
+print(userInfo[0])
+print(userInfo[0:7])
+print('RiverLi' in userInfo)
+print('RiverLi' not in userInfo)
+print(r"\n")
+print(R"\n")
+```
+
+#### 格式化输出
+
+```python
+print("姓名：%s, 年龄： %d, 成绩：%.1f" % ('RiverLi', 28, 93.24))
+```
+
+![字符串格式化输出](https://riverli.oss-cn-beijing.aliyuncs.com/PythonTutorial/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA.png)
+
+**在Python3中，所有的字符串都是Unicode字符串。Unicode字符串则存储为16位unicode字符串，这样能够表示更多的字符集**
+
+#### 常见函数
+
+```python
+print('hello'.capitalize())
+print('hello'.center(12,'-'))
+print('hello'.count('l', 0, 5))
+
+str = "你好";
+str_utf8 = str.encode("UTF-8")
+str_gbk = str.encode("GBK")
+print(str)
+print("UTF-8 编码：", str_utf8)
+print("GBK 编码：", str_gbk)
+print("UTF-8 解码：", str_utf8.decode('UTF-8','strict'))
+print("GBK 解码：", str_gbk.decode('GBK','strict'))
+
+print('hello'.islower())
+print('12'.isdigit())
+print('12.45'.isnumeric())
+print('hello'.endswith('o'))
+print('hello'.upper())
+print('HellO'.swapcase())
+```
+
+### List 
+
+```python
+list = ['hello', 'python', '!', 'I', 'Love', 'you']
+```
+
+类似于其他语言中的数组。
+
+```python
+list = ['hello', 'python', 2019, 10]
+
+print('查询：')
+print(list[0], list[1])
+print(list[0:3])
+
+print('遍历：')
+for li in list:
+    print(li)
+
+print('增加：')
+list.append('good')
+print(list)
+
+print('修改：')
+list[1] = 'RiverLi'
+print(list)
+
+print('删除：')
+del list[0]
+print(list[0])
+```
+
+#### 函数操作
+
+```python
+list = [4, 3, 5, 6, 4, 5, 4]
+list.append(8)
+print(list)
+print(list.count(4))
+list.extend([1,2,3])
+print(list)
+print(list.index(2))
+list.insert(0,0)
+print(list)
+print(list.pop())
+print(list)
+list.remove(4)
+print(list)
+list.reverse()
+print(list)
+list.sort()
+print(list)
+newList = list.copy()
+print(newList)
+list.clear()
+print(list)
+```
 
 ### Tuple
 
