@@ -166,6 +166,8 @@ for i in range(0, len(var)):
 
 ![转义字符表](https://riverli.oss-cn-beijing.aliyuncs.com/PythonTutorial/python%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6.jpg)
 
+例子
+
 ```python
 print('我是RiverLi\
 我在写Python')
