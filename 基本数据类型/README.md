@@ -24,7 +24,7 @@ print ('m=', m, 'n=', n, 'k=', k)
 
 ```python
 var1 = 10
-var2 = 20
+var2 = 20	基本数据类型
 print(var1)
 print(var2)
 
@@ -288,8 +288,88 @@ print(list)
 ```
 
 ### Tuple
+元组与列表类似，不同之处在于元组的元素不能修改。
+元组使用小括号表示，列表使用中(方)括号表示。
+```python
+#!/usr/bin/python3
+
+tuple1= ('riverli', 1992, "01-06", 28)
+tuple2 = ('python', "learn", 1)
+
+# tuple1[0] = 12 非法
+tuple3 = tuple1 + tuple2
+print('tuple3=', tuple3) # tuple3= ('riverli', 1992, '01-06', 28, 'python', 'learn', 1)
+
+del tuple3
+print ("删除后的元组 tuple3 : ")
+# print('tuple3=', tuple3) # NameError: name 'tuple3' is not defined
+
+print("元组tuple1的长度为: ", len(tuple1))
+print("元组tuple1的复制4次: ", tuple1 * 4)
+print('\'riverli\' 在tuple1中：', 'riverli' in tuple1)
+
+for x in tuple1:
+    print('x =', x)
+
+list1 = [1, 2, 3, 4]
+print('list to tuple:', tuple(list1))
+
+print('tuple1[2]=', tuple1[2])
+print('tuple1[-1]=', tuple1[-1])
+print('tuple1[1:]=', tuple1[1:])
+```
 
 ### Set
 
 ### Dictionary
+字典是可变容器，可以存储任意类型的对象。对象以键值对(key=>value)的方式存储，键与值之间以及冒号分割，对象之间以逗号分割，字典使用大括号表示。
+```python
+dic = {'lan':'python', 'version': '3.0'}
+print('dic=', dic)
+```
+
+**键必须是唯一的且不可变，如字符串、数字、元组，值可以取任何数据类型**
+```python
+dic = {'lan':'python', 3.14: '3.0', (1,2,4): [1,2,4]}
+print('dic=', dic)
+```
+增删改查
+``` python
+dic = {'name': 'riverli', 'age': 18}
+print('dic[name]=', dic['name'])
+print('dic[age]=', dic['age'])
+# print('dic[sex]=', dic['sex']) #KeyError: 'sex'
+
+dic['sex'] = '男'
+print('dic[sex]=', dic['sex'])
+dic['age'] = 20
+print('dic[age]=', dic['age'])
+
+'''
+del dic['age']
+print('dic[age]=', dic['age']) #KeyError: 'age'
+'''
+
+dic.clear()
+print('dic=', dic)
+del dic 
+print('dic=', dic) # NameError: name 'dic' is not defined
+
+ for x in dic:
+    print('key=', x, 'value=', dic[x])
+```
+
+特性解释
+1. 不允许同一个键出现两次，如果出现以最后的值为准。
+2. 键必须是不可变的。所以可以用 数字 字符串 或者 元组。
+```python
+dic = {'name': 'riverli', 'age': 18, 'name': 'pete'}
+print('dic[name]=', dic['name'])
+
+# dic2 = {'name': 'pete', 28: 28, (1, 2): 12}
+# dic3 = {'name': 'pete', 28: 28,[1, 2]: 12} # TypeError: unhashable type: 'list'
+```
+相关函数
+
+
 
