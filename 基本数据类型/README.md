@@ -321,6 +321,93 @@ print('tuple1[1:]=', tuple1[1:])
 
 ### Set
 
+集合是一个无序的不重复的元素序列。
+
+创建空的集合要使用`set()`，不能使用`{}`。
+
+```python
+set1 = set()
+dict1 = {}
+
+print(type(set1))
+print(type(dict1))
+
+# <class 'set'>
+# <class 'dict'>
+```
+
+创建集合
+
+```python
+set2 = {'hello', 'python', 'learn'}
+set3 = set('nihao')
+print(set2)
+print(set3)
+# {'python', 'learn', 'hello'}
+# {'a', 'h', 'i', 'n', 'o'}
+```
+
+集合运算
+
+```python
+a = set('abcd')
+b = set('cdef')
+print(a-b) # 集合a中包含而集合b中不包含的元素
+print(a|b) # 集合a或b中包含的所有元素
+print(a&b) # 集合a和b中都包含了的元素
+print(a^b) # 不同时包含于a和b的元素
+# {'b', 'a'}
+# {'d', 'e', 'a', 'f', 'c', 'b'}
+# {'c', 'd'}
+# {'e', 'a', 'f', 'b'}
+```
+
+增加元素
+
+```python
+set1 = {'ni', 'hao'}
+set1.add('2019')
+print(set1)
+set1.add('ni')
+print(set1)
+# {'hao', '2019', 'ni'}
+# {'hao', '2019', 'ni'}
+
+set1.update('10')
+set1.update({1,4})
+set1.update((2,5))
+print(set1)
+# {1, 2, '2019', 4, 5, 'ni', '1', '0', 'hao'}
+```
+
+移除元素
+
+```python
+set1 = {'hello', 'python', '2019'}
+set1.remove('hello')
+print(set1) # {'2019', 'python'}
+# set1.remove('riverli') #KeyError: 'riverli'
+set1.discard('riverli') # 如果元素不存在，不会发生错
+print(set1) # {'2019', 'python'}
+set1.pop() # 随机删除集合中的一个元素
+print(set1)
+```
+
+其他
+
+```python
+set1 = {'hello', 'python', '2019'}
+print(len(set1))
+print('hello' in set1)
+set1.clear()
+print(set1)
+# 3
+# True
+# set()
+```
+
+
+
 ### Dictionary
 字典是可变容器，可以存储任意类型的对象。对象以键值对(key=>value)的方式存储，键与值之间以及冒号分割，对象之间以逗号分割，字典使用大括号表示。
 ```python
